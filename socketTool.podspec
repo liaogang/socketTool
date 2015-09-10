@@ -38,7 +38,7 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = "MIT (example)"
+  s.license      = "MIT"
   # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
@@ -57,18 +57,17 @@ Pod::Spec.new do |s|
   # s.authors            = { "liaogang" => "ynwlgh@icloud.com" }
   # s.social_media_url   = "http://twitter.com/liaogang"
 
-  # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
+  # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― # #
   #  If this Pod runs only on iOS or OS X, then specify the platform and
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  # s.platform     = :ios
+  s.platform     = :osx
   # s.platform     = :ios, "5.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
-  # s.osx.deployment_target = "10.7"
+  s.osx.deployment_target = "10.7"
 
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -77,7 +76,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/liaogang/socketTool.git", :tag => '0.0.5'}
+  s.source       = { :git => "https://github.com/liaogang/socketTool.git", :tag => 'v0.0.5'}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

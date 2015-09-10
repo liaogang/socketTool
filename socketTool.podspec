@@ -16,8 +16,8 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "socketTool"
-  s.version      = "0.0.5"
-  s.summary      = "A short description of socketTool."
+  s.version      = "0.0.6"
+  s.summary      = "a simple socket tool for windows or unix."
 
   s.description  = <<-DESC
                    A longer description of socketTool in Markdown format.
@@ -76,7 +76,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/liaogang/socketTool.git", :tag => 'v0.0.5'}
+  s.source       = { :git => "https://github.com/liaogang/socketTool.git", :tag => 'v0.0.6'}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

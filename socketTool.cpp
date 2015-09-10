@@ -96,7 +96,7 @@ BOOL CreateTcpSocketClient(const char *strHost , SOCKET *socketClient)
     {
         if(host->h_addrtype == AF_INET)
         {
-            sockaddrClient.sin_addr.s_addr=*(u_long *) host->h_addr_list[0];
+            sockaddrClient.sin_addr.s_addr=(in_addr_t)(*(u_long *) host->h_addr_list[0]);
             
             //create client socket
             *socketClient=socket(AF_INET,SOCK_STREAM,0);
@@ -106,7 +106,7 @@ BOOL CreateTcpSocketClient(const char *strHost , SOCKET *socketClient)
                 //connect
                 if(SOCKET_ERROR==connect(*socketClient,(const struct sockaddr*)&sockaddrClient,sizeof(sockaddrClient)))
                 {
-                    printf("thread %u:connect error : %d \n", GetLastError() );
+                    printf("connect error : %d \n", GetLastError() );
                 }
                 else
                 {
@@ -325,7 +325,7 @@ MemBuffer* recvSocketData(SOCKET socketDownload )
                             int contentBytesRecvTotal = contentLengthRecv;
                             for(int contentBytesRecv= 1 ; contentBytesRecv > 0 && contentBytesRecvTotal <= bufferLength;  )
                             {
-                                contentBytesRecv = recv(socketDownload ,(char*) resultBuffer->buffer + contentBytesRecvTotal , bufferLength - contentBytesRecvTotal , 0 );
+                                contentBytesRecv = (int)recv(socketDownload ,(char*) resultBuffer->buffer + contentBytesRecvTotal , bufferLength - contentBytesRecvTotal , 0 );
                                 contentBytesRecvTotal += contentBytesRecv;
                             }
                             

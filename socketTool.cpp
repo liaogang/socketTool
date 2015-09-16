@@ -389,10 +389,11 @@ int writeHttpContent(SOCKET httpResponse , const char *savepath )
 
 
 const char curlUrlFileHeaderFormat[] =
-"GET %s HTTP/1.1\r\n\
-Connection: Keep-Alive\r\n\
-Host: %s\r\n\
-\r\n\r\n";
+"GET %s HTTP/1.1\r\n"
+"Connection: Keep-Alive\r\n"
+"Host: %s\r\n"
+"\r\n\r\n";
+
 const size_t curlUrlFileHeaderFormatLen = sizeof(curlUrlFileHeaderFormat)/sizeof(curlUrlFileHeaderFormat[0]) -1;
 const size_t curlUrlFileHeaderFormatSLen = 4; //lenght of %s in above.
 
